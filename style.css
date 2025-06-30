@@ -1,0 +1,199 @@
+/* 
+CSS Color 4 Sandbox - Allgemeine Styles 
+Version: 1.0
+Author: Enno Hyttrek
+*/
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: hsl(200 21% 21%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: hsl(200 21% 21%);
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    color: hsl(200 21% 21%);
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+h3 {
+    color: hsl(200 21% 21%);
+    margin-top: 30px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+.color-section {
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f8f9fa;
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.color-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.color-card:hover {
+    transform: translateY(-5px);
+}
+
+.color-sample {
+    width: 100%;
+    height: 80px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #eee;
+}
+
+.color-info {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.color-code {
+    background: hsl(200 21% 21%);
+    color: #ecf0f1;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.85em;
+}
+
+.comparison-row {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    align-items: center;
+}
+
+.comparison-color {
+    width: 60px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.comparison-label {
+    flex: 1;
+    font-size: 0.9em;
+}
+
+.wide-gamut-note {
+    background: linear-gradient(135deg, #ff9a56, #ff6b95);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.feature-highlight {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.demo-interactive {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #e74c3c;
+    margin: 20px 0;
+}
+
+.gradient-demo {
+    height: 100px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.palette-demo {
+    display: flex;
+    height: 60px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.palette-color {
+    flex: 1;
+}
+
+.technical-info {
+    background: #ecf0f1;
+    padding: 15px;
+    border-left: 4px solid #3498db;
+    margin: 15px 0;
+    font-size: 0.9em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th {
+    padding: 12px;
+    text-align: left;
+    background-color: hsl(200 21% 21%);
+    color: white;
+}
+
+td {
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}

@@ -124,4 +124,4 @@
 
 ------
 
-(Generiert mit ChatGPT 4o)
+(Dieser Überblick wurde generiert von Enno Hyttrek mit Hilfe von ChatGPT 4o)
