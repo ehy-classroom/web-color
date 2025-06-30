@@ -6,6 +6,68 @@
     <title>CSS Color 4 Sandbox - Neue Farbmodelle im Vergleich</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* ===== NAVIGATION STYLES ===== */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(200, 200, 200, 0.3);
+            z-index: 1000;
+            padding: 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: hsl(200 21% 21%);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: hsl(200 21% 21%);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            background: rgba(102, 126, 234, 0.1);
+            color: hsl(200 21% 15%);
+        }
+        
+        .nav-link.active {
+            background: rgba(102, 126, 234, 0.15);
+            color: hsl(200 21% 15%);
+        }
+        
+        /* Anpassung für fixed Navigation */
+        body {
+            padding-top: 70px;
+        }
+        
         /* ===== CSS COLOR 4 FARBBEISPIELE ===== */
         
         /* ----- Überschriften mit CSS Color 4 Akzenten ----- */
@@ -94,9 +156,42 @@
         /* ----- Vergleichsfarben für traditionelle Methoden ----- */
         .rgb-comparison { background-color: rgb(170, 90, 60); }
         .srgb-comparison { background-color: rgb(255, 77, 77); }
+        
+        /* ===== RESPONSIVE NAVIGATION ===== */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 10px 15px;
+            }
+            
+            .nav-menu {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+            
+            body {
+                padding-top: 60px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Web Color Design</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="css-color-4-sandbox.html" class="nav-link active">CSS Color 4 Sandbox</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
         <h1>CSS Color 4 Sandbox</h1>
         <p style="text-align: center; font-size: 1.1em; color: #7f8c8d;">

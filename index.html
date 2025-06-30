@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Color Design Basics</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== NAVIGATION STYLES ===== */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(200, 200, 200, 0.3);
+            z-index: 1000;
+            padding: 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: hsl(200 21% 21%);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: hsl(200 21% 21%);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            background: rgba(102, 126, 234, 0.1);
+            color: hsl(200 21% 15%);
+        }
+        
+        .nav-link.active {
+            background: rgba(102, 126, 234, 0.15);
+            color: hsl(200 21% 15%);
+        }
+        
+        /* ===== MAIN CONTENT ADJUSTMENTS ===== */
+        body {
+            padding-top: 70px; /* Platz für fixed Navigation */
+        }
+        
+        /* ===== INDEX PAGE SPECIFIC STYLES ===== */
+        .hero-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: hsl(200 21% 40%);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(200, 200, 200, 0.2);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: hsl(200 21% 21%);
+        }
+        
+        .project-description {
+            color: hsl(200 21% 35%);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .project-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .feature-highlight {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 10px 15px;
+            }
+            
+            .nav-menu {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            body {
+                padding-top: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Web Color Design</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="css-color-4-sandbox.html" class="nav-link">CSS Color 4 Sandbox</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section class="hero-section">
+            <h1 class="hero-title">Web Color Design Basics</h1>
+            <p class="hero-subtitle">
+                Entdecken Sie moderne Farbmodelle und Color-Spaces für das Web. 
+                Von traditionellen RGB/HSL-Methoden bis hin zu den neuesten CSS Color 4 Standards.
+            </p>
+        </section>
+
+        <div class="project-grid">
+            <div class="project-card">
+                <h2 class="project-title">CSS Color 4 Sandbox</h2>
+                <p class="project-description">
+                    Eine umfassende interaktive Demonstration der neuen CSS Color 4 Farbmodelle wie LAB, LCH, OKLCH, OKLAB und Wide-Gamut Color-Spaces wie Display P3 und Rec2020.
+                </p>
+                
+                <div class="feature-highlight">
+                    <h3>Enthaltene Farbmodelle:</h3>
+                    <ul class="feature-list">
+                        <li><strong>LAB</strong> - Perzeptuell gleichmäßige Farbdarstellung</li>
+                        <li><strong>LCH</strong> - Zylindrische LAB-Darstellung</li>
+                        <li><strong>OKLCH</strong> - Verbesserte perzeptuelle Gleichmäßigkeit</li>
+                        <li><strong>OKLAB</strong> - Optimierte LAB-Version</li>
+                        <li><strong>Display P3</strong> - Wide-Gamut Farbraum</li>
+                        <li><strong>Rec2020</strong> - Zukunftsstandard für Displays</li>
+                        <li><strong>XYZ</strong> - CIE-Standard Farbraum</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-highlight">
+                    <h3>Praktische Beispiele:</h3>
+                    <ul class="feature-list">
+                        <li>Direkte Vergleiche zu RGB, Hex und HSL</li>
+                        <li>Gradient-Interpolation in verschiedenen Farbräumen</li>
+                        <li>Barrierefreiheits-optimierte Farbpaletten</li>
+                        <li>Design System Implementierungen</li>
+                        <li>Browser-Kompatibilitäts-Übersicht</li>
+                    </ul>
+                </div>
+                
+                <a href="css-color-4-sandbox.html" class="project-link">Sandbox erkunden →</a>
+            </div>
+
+            <div class="project-card">
+                <h2 class="project-title">Weitere Projekte</h2>
+                <p class="project-description">
+                    Diese Sammlung wird kontinuierlich erweitert um weitere Aspekte der Webfarben-Gestaltung, Accessibility-Features und moderne Design-Trends.
+                </p>
+                
+                <div class="feature-highlight">
+                    <h3>Geplante Erweiterungen:</h3>
+                    <ul class="feature-list">
+                        <li>Color Contrast Tools</li>
+                        <li>Farbenblindheit-Simulationen</li>
+                        <li>Automatische Palette-Generatoren</li>
+                        <li>Brand Color Systeme</li>
+                        <li>Dark Mode Implementierungen</li>
+                    </ul>
+                </div>
+                
+                <div style="opacity: 0.6; padding: 15px; border: 2px dashed #ccc; border-radius: 8px; text-align: center; color: hsl(200 21% 40%);">
+                    <em>Weitere Tools in Entwicklung...</em>
+                </div>
+            </div>
+        </div>
+
+        <section style="margin-top: 60px; padding: 40px; background: rgba(102, 126, 234, 0.05); border-radius: 15px; text-align: center;">
+            <h2>Browser-Unterstützung</h2>
+            <p style="margin-bottom: 25px; color: hsl(200 21% 35%);">
+                Für die optimale Darstellung der CSS Color 4 Features verwenden Sie bitte einen modernen Browser:
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 25px;">
+                <div style="padding: 15px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <strong style="color: #667eea;">Safari 15+</strong><br>
+                    <small style="color: hsl(200 21% 40%);">Beste P3-Unterstützung</small>
+                </div>
+                <div style="padding: 15px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <strong style="color: #667eea;">Chrome 111+</strong><br>
+                    <small style="color: hsl(200 21% 40%);">Vollständige CSS Color 4</small>
+                </div>
+                <div style="padding: 15px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <strong style="color: #667eea;">Firefox 113+</strong><br>
+                    <small style="color: hsl(200 21% 40%);">Aktuelle Implementierung</small>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
